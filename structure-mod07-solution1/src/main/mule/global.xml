@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration_local" doc:name="HTTP Request configuration" doc:id="f771532d-7fc3-42c3-854d-0b0eeb1bc6df" >
+		<http:request-connection host="${http.host}" port="${http.port}" connectionIdleTimeout="${http.timeout}"/>
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="28ba9f53-9c8e-45b0-b621-c74c0e1dced4" file="${env}-properties.yaml" />
+	<http:request-config name="HTTP_Request_configuration_MuleTraining" doc:name="HTTP Request configuration" doc:id="ff91da0c-b787-4eaa-87f0-b8b9cc8009ae" >
+		<http:request-connection host="${http.muleHost}" port="${http.mulePort}" connectionIdleTimeout="${http.timeout}" />
+	</http:request-config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7311ff95-3b95-477e-990e-01c112986bbb" >
+		<http:listener-connection host="${http.host}" port="${http.port}" />
+	</http:listener-config>
+	<global-property doc:name="Global Property" doc:id="43294482-b2df-4b67-84ca-23278176e7e5" name="env" value="dev" />
+</mule>

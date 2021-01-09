@@ -1,0 +1,8 @@
+http:
+  muleHost: "mu.learn.mulesoft.com"
+  mulePort: "80"
+  mulePath: "/american/{destination}"
+  host: "localhost"
+  port: "8081"
+  path: "/processData"
+  timeout: "300000"
